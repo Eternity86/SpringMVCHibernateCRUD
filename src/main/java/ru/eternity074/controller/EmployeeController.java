@@ -32,7 +32,7 @@ public class EmployeeController {
 	public ModelAndView listEmployee(ModelAndView model) throws IOException {
 		List<Employee> listEmployee = employeeService.getAllEmployees();
 		model.addObject("listEmployee", listEmployee);
-		model.setViewName("home");
+		model.setViewName("index");
 		return model;
 	}
 

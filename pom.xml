@@ -11,7 +11,7 @@
 	<!-- Specifying the Versions of Spring, Hiberante, MariaDB etc -->
 	<properties>
 		<java.version>1.8</java.version>
-		<spring.version>4.3.26.RELEASE</spring.version>
+		<spring.version>5.2.5.RELEASE</spring.version>
 		<hibernate.version>5.2.18.Final</hibernate.version>
 		<!-- <mysql.version>5.1.10</mysql.version> -->
 		<mariadb.version>2.6.0</mariadb.version>
@@ -20,6 +20,10 @@
 		<jsp.version>2.1</jsp.version>
 		<jstl.version>1.2</jstl.version>
 		<jaxb-api.version>2.3.1</jaxb-api.version>
+		<maven-compiler.version>3.8.1</maven-compiler.version>
+		<maven-eclipse.version>2.9</maven-eclipse.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<dependencies>
@@ -143,9 +147,21 @@
                     </includes>
                 </configuration>
             </plugin>
+            <!-- configure Eclipse workspace -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>${maven-eclipse.version}</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+					<!-- <wtpContextName>/maven_crud</wtpContextName> -->
+				</configuration>
+			</plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>${maven-compiler.version}</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
