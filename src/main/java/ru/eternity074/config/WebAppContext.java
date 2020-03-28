@@ -43,7 +43,7 @@ public class WebAppContext {
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(ds());
-		sessionFactory.setHibernateProperties(buildHibernateProperties());
+		sessionFactory.setHibernateProperties(hibernateProperties());
 		sessionFactory.setPackagesToScan(packagesToScan);
 		return sessionFactory;
 	}
@@ -59,7 +59,7 @@ public class WebAppContext {
 	 * 
 	 * Loading all the hibernate properties from a properties file
 	 */
-	protected Properties buildHibernateProperties() {
+	protected Properties hibernateProperties() {
 		Properties hibernateProperties = new Properties();
 
 		hibernateProperties.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));

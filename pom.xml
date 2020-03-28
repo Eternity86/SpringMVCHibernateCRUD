@@ -13,7 +13,6 @@
 		<java.version>1.8</java.version>
 		<spring.version>5.2.5.RELEASE</spring.version>
 		<hibernate.version>5.2.18.Final</hibernate.version>
-		<!-- <mysql.version>5.1.10</mysql.version> -->
 		<mariadb.version>2.6.0</mariadb.version>
 		<junit.version>4.13</junit.version>
 		<servlet-api.version>3.1.0</servlet-api.version>
@@ -43,7 +42,6 @@
 			<properties>
 				<finName>${project.artifactId}-test##test</finName>
 				<deployServer>test-deploy</deployServer>
-				<deployUrl>http://arbiter2008.fvds.ru:8080/manager/text</deployUrl>
 				<hibernateShowSql>false</hibernateShowSql>
 				<appScope>test</appScope>
 			</properties>
@@ -53,7 +51,6 @@
 			<properties>
 				<finName>${project.artifactId}##${project.version}</finName>
 				<deployServer>release-deploy</deployServer>
-				<deployUrl>http://arbiter2008.fvds.ru:8080/manager/text</deployUrl>
 				<hibernateShowSql>false</hibernateShowSql>
 				<appScope>prod</appScope>
 			</properties>
